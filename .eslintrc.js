@@ -27,5 +27,11 @@ module.exports = {
         extensions: ['.jsx', '.js'],
       },
     ],
+    'react/function-component-definition': [
+      2,
+      { 'namedComponents': 'arrow-function' }
+    ],
+    "react/button-has-type": "off",
+    "jsx-a11y/label-has-associated-control": "off"
   },
 };

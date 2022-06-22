@@ -32,6 +32,7 @@ module.exports = {
       { 'namedComponents': 'arrow-function' }
     ],
     "react/button-has-type": "off",
-    "jsx-a11y/label-has-associated-control": "off"
+    "jsx-a11y/label-has-associated-control": "off",
+    "default-param-last": "off",
   },
 };

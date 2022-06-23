@@ -34,5 +34,7 @@ module.exports = {
     "react/button-has-type": "off",
     "jsx-a11y/label-has-associated-control": "off",
     "default-param-last": "off",
+    "no-alert": "off",
+    "react/prop-types": 0,
   },
 };

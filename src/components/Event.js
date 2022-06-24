@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { PropTypes } from 'prop-types'
 import { DELETE_EVENT } from '../actions'
+import AppContext from '../contexts/AppContexts'
 
 const Event = (props) => {
-  const { event, dispatch } = props
+  const { event } = props
+  const { dispatch } = useContext(AppContext)
 
   const handleClickDeleteButton = (id) => {
     const result = window.confirm(`イベント(id=${id})を本当に削除しても良いですか？`)
@@ -36,7 +38,6 @@ Event.propTypes = {
     title: PropTypes.string,
     body: PropTypes.string,
   }),
-  dispatch: PropTypes.func.isRequired,
 }
 
 Event.defaultProps = {

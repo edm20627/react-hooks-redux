@@ -1,18 +1,22 @@
-import React, { useReducer } from 'react'
+import React, { useMemo, useReducer } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import reducer from '../reducers'
 import EventForm from './EventForm'
 import Events from './Events'
+import AppContext from '../contexts/AppContexts'
 
 const App = () => {
   const [state, dispatch] = useReducer(reducer, [])
 
+  const memoState = useMemo(() => ({ state, dispatch }), [state])
+
   return (
-    <div className="container-fluid">
-      <h4>イベント作成フォーム</h4>
-      <EventForm state={state} dispatch={dispatch} />
-      <Events state={state} dispatch={dispatch} />
-    </div>
+    <AppContext.Provider value={memoState}>
+      <div className="container-fluid">
+        <EventForm />
+        <Events />
+      </div>
+    </AppContext.Provider>
   )
 }
 

@@ -6,7 +6,10 @@ import Events from './Events'
 import AppContext from '../contexts/AppContexts'
 
 const App = () => {
-  const [state, dispatch] = useReducer(reducer, [])
+  const initialState = {
+    events: [],
+  }
+  const [state, dispatch] = useReducer(reducer, initialState)
 
   const memoState = useMemo(() => ({ state, dispatch }), [state])
 
